@@ -1,0 +1,15 @@
+confirm-exit no
+confirm-delete-all-articles no
+confirm-mark-all-feeds-read no
+confirm-mark-feed-read no
+
+browser "mpv --profile=best %u > /dev/null 2>&1 &"
+
+color info black green
+color listfocus_unread black green bold
+color listfocus black green
+
+bind-key h quit
+bind-key j next
+bind-key k prev
+bind-key l open

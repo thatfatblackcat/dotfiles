@@ -1,0 +1,30 @@
+* cloudflare.com * noop
+* cloudfront.net * noop
+* gstatic.com * block
+* sstatic.net * noop
+
+mega.nz * 3p noop
+mega.nz * 3p-script noop
+pixiv.net * 3p noop
+pixiv.net * 3p-script noop
+reddit.com * 3p noop
+reddit.com * 3p-script noop
+
+*$csp=worker-src 'none'
+@@||mega.nz^$csp=worker-src 'none'
+
+! 2022-02-01 https://jisho.org
+jisho.org##.details.kanji>.row:nth-of-type(odd)
+
+jisho.org##.sentences_block,.names_block
+jisho.org###other_dictionaries
+
+jisho.org##.concept_light-status_link
+jisho.org##.zero-padding.sentences
+
+jisho.org##.readings
+jisho.org##header,footer
+
+! 2022-02-01 https://goo.ne.jp
+goo.ne.jp###NR-onegoo
+goo.ne.jp###NR-footer

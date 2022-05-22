@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Licensed under ISC by TFBC, published at
+# https://github.com/thatfatblackcat/dotfiles
+
+for sub in "$@"
+do
+	sed '/\(WEBVTT\|STYLE\|NOTE\)/,/^$/d' "$sub" | tac \
+		| sed '/-->/,+1d;/^$/d;s/^/<p>/;s/$/<\/p>/' | tac > "${sub%.*}.html"
+done

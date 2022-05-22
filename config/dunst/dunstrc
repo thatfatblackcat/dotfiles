@@ -1,0 +1,15 @@
+[global]
+	icon_path = /usr/share/icons/breeze-dark/status/24
+
+	font = monospace 10
+	background = "#222222"
+	foreground = "#EEEEEE"
+
+	horizontal_padding = 12
+	padding = 12
+
+	offset = 10x50
+	transparency = 20
+
+	height = 350
+	width = 370

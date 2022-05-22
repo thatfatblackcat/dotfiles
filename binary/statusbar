@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Licensed under ISC by TFBC, published at
+# https://github.com/thatfatblackcat/dotfiles
+
+while sleep 1
+do
+	(cd /sys/class/power_supply/BAT0 && xsetroot -name \
+		" $(cat status) $(cat capacity)% | $(date '+%A %B %d, %I:%M %p') ")
+done

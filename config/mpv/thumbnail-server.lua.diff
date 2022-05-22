@@ -1,0 +1,15 @@
+@@ -343 +343 @@
+-local SCRIPT_NAME = "mpv_thumbnail_script"
++local SCRIPT_NAME = "thumbnail-script"
+@@ -345 +345 @@
+-local default_cache_base = ON_WINDOWS and os.getenv("TEMP") or "/tmp/"
++local default_cache_base = ON_WINDOWS and os.getenv("TEMP") or os.getenv("XDG_RUNTIME_DIR") or "/tmp/"
+@@ -349 +349 @@
+-    cache_directory = join_paths(default_cache_base, "mpv_thumbs_cache"),
++    cache_directory = join_paths(default_cache_base, "mpv"),
+@@ -359 +359 @@
+-    autogenerate_max_duration = 3600, -- 1 hour
++    autogenerate_max_duration = 86400, -- 1 day
+@@ -369 +369 @@
+-    prefer_mpv = true,
++    prefer_mpv = false,

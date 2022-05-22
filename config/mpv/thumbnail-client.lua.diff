@@ -1,0 +1,21 @@
+@@ -675 +675 @@
+-local SCRIPT_NAME = "mpv_thumbnail_script"
++local SCRIPT_NAME = "thumbnail-script"
+@@ -677 +677 @@
+-local default_cache_base = ON_WINDOWS and os.getenv("TEMP") or "/tmp/"
++local default_cache_base = ON_WINDOWS and os.getenv("TEMP") or os.getenv("XDG_RUNTIME_DIR") or "/tmp/"
+@@ -681 +681 @@
+-    cache_directory = join_paths(default_cache_base, "mpv_thumbs_cache"),
++    cache_directory = join_paths(default_cache_base, "mpv"),
+@@ -691 +691 @@
+-    autogenerate_max_duration = 3600, -- 1 hour
++    autogenerate_max_duration = 86400, -- 1 day
+@@ -701 +701 @@
+-    prefer_mpv = true,
++    prefer_mpv = false,
+@@ -932 +932 @@
+-    local file_key = ("%s-%d"):format(filename, filesize)
++    local file_key = ("%s"):format(filename)
+@@ -3775 +3775 @@
+-mp.register_event("tracks-changed", request_init)
++  -- mp.register_event("tracks-changed", request_init)
