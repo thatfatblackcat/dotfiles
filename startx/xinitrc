@@ -2,8 +2,8 @@ echo '*.background: #222' | xrdb -merge
 echo '*.foreground: #CCC' | xrdb -merge
 xset dpms 0 0 0 s off r rate 250 50
 
-xwallpaper --zoom ~/yokonaga/07569861/76188900_p0.jpg
-(eval "$(ssh-agent)" && ssh-add ~/.ssh/github) &
+xwallpaper --zoom ~/yokonaga/03447787/85674849_p0.jpg
+eval "$(ssh-agent)" && ssh-add ~/.ssh/github
 
 pipewire & pipewire-pulse &
 picom & dunst & statusbar &

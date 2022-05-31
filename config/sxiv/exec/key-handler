@@ -1,0 +1,30 @@
+#!/bin/sh
+
+prompt() {
+	TEXT='sxiv: remove selected? [y/N]'
+	[ "$(dmenu -p "$TEXT" <&-)" = 'y' ]
+}
+
+notify() {
+	notify-send 'Sxiv Key-Handler Event' \
+		'Operation successful'
+}
+
+print0() {
+	while read -r f
+	do
+		printf '%s\0' "$f"
+	done
+}
+
+locate() {
+	read -r f
+	realpath "$f"
+}
+
+case "$1" in
+	"0") prompt && print0 | xargs -0 -I{} sh -c ':> {}' && notify ;;
+	"r") prompt && print0 | xargs -0 -I{} sh -c 'rm {}' && notify ;;
+	"w") xwallpaper "--$(dmenu -p 'sxiv: xwallpaper mode' <&-)" "$(locate)" ;;
+	"x") sed -i "s|^xw.*|xwallpaper --zoom $(locate)|" ~/.xinitrc && notify ;;
+esac
