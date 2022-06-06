@@ -1,9 +1,9 @@
-confirm-exit no
-confirm-delete-all-articles no
 confirm-mark-all-feeds-read no
 confirm-mark-feed-read no
+max-items 15
 
-browser "mpv %u > /dev/null 2>&1 &"
+macro b set browser "mpv --profile=best %u > /dev/null 2>&1 &" ; open-in-browser
+macro y set browser "mpv --profile=ytdl %u > /dev/null 2>&1 &" ; open-in-browser
 
 color info black green
 color listfocus_unread black green bold
